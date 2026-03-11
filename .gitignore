@@ -1,0 +1,34 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Ignore Jupyter Notebook checkpoints and data
+.ipynb_checkpoints/
+*.ipynb
+
+# Python compiled files
+*.pyc
+__pycache__/
+# Ignore general cache directories and files
+__pycache__/
+.cache/
+.pytest_cache/
+*.pyc
+*.swp
+# ignore my github key
+rajiv_github_key
+rajiv_github_key.pub
+#ignore document
+*.pdf
+#ignore the .env file
+.env
+#ignore the .vscode folder
+.vscode/
+.python-version
