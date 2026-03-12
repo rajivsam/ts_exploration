@@ -274,7 +274,7 @@
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation1">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This analysis of hourly biomass power generation data from Kaggle uses Singular Spectrum Analysis (SSA) to summarize variations, revealing a dominant trend (94% variability) and a minor seasonal component (3.5% variability). SSA, based on SVD, also allows for identifying frequency components and change points marking the end of trend cycles. Implementation requires finding the noise term, with the Durbin-Watson test (statistic 1.5-2.5) used to confirm acceptable lack of serial correlation in residuals.</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This analysis uses Singular Spectrum Analysis (SSA) on hourly biomass power generation data to summarize its variation. The dataset exhibits a strong trend component, accounting for approximately 94% of variability, and a seasonal component, contributing about 3.5%. Change points, marking the end of trend cycles, are identifiable using peak finding algorithms. SSA, being SVD-based, also allows for the identification of frequency components. The Durbin-Watson test (statistic 1.5-2.5) is recommended to identify the noise term by checking for a lack of serial correlation in residuals.</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
   <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>

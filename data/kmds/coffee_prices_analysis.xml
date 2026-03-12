@@ -274,7 +274,7 @@
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation1">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This report summarizes coffee price data (1991-Oct 2025) from FRED using Singular Spectrum Analysis (SSA). SSA decomposed the variation into four sources, with one accounting for 90% and others contributing 7.2%, 1.4%, and 0.7%. Change points were identified by a peak-finding algorithm, and frequency components can also be extracted. The Durbin-Watson test (1.5-2.5 range) is recommended to identify the noise term by checking for serial correlation in residuals.</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This analysis of coffee prices (1991-2025, from FRED) uses Singular Spectrum Analysis (SSA) to summarize variation. SSA explains price variation through four sources (90%, 7.2%, 1.4%, 0.7%) and identifies frequency components via SVD. Peak finding detects change points at the end of trend cycles. The Durbin-Watson test (1.5-2.5 acceptable range) can be used to identify the noise term by assessing residual serial correlation.</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
   <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
