@@ -1,0 +1,21 @@
+Category: DESCRIPTIVE-STATISTICS
+Observation: Descriptive Statistics: There were 426 samples, taken at a frequency of monthly (first day of month). The mean was 144.91 and the standard deviation was 65.39. Evaluation of the histogram and kernel density plots reveals a multimodal distribution.
+Category: OUTLIERS
+Observation: Outliers: Using the interquartile range (IQR) metric, the proportion of outliers was found to be 0.02.
+Category: RAW-PLOTS
+Observation: Raw Plots: It looks like outliers are concentrated at the end of the series mostly. Very high prices seem recent
+Category: SMOOTHED-PLOTS
+Observation: Smoothed Plots: Visually, the Singular Spectrum Analysis (SSA) appears to achieve a very good reconstruction. Trend observed for some parts of the data, trend-cycles are present, no apparent seasonality evident.
+Category: CHANGE-POINTS
+Observation: Change Points: The chosen approach for capturing change points involves working with the smoothed version of the signal rather than the noisy, raw signal. While the drawback of this method is that it may require additional steps to detect change points within the noise component, smoothing allows us to use elementary calculus to identify shifts in the signal's derivative.
+Peak-finding algorithms of varying sophistication can be applied for this purpose. Here, SciPy's find_peaks function is used to locate local maxima and minima in the smoothed signal. The code below demarcates these points, representing segments that may hold specific significance within the application's domain—a factor best interpreted by a domain expert.
+Recall that the smoothed signal accounts for most of the variation in the observed signal. But what about the residuals? Since they often account for only a small portion of the variation, you might not be concerned with them. However, if you are interested in the nature of the residuals—for instance, if you plan to use the signal in a predictive model and need to confirm that the residuals are independent random variables—you can use the Durbin-Watson test. A test statistic in the range of 1.5 to 2.5 suggests the residuals are likely white noise.
+If you need to verify if the noise is homogeneous (a crucial step if downstream predictive modeling is your goal), you can apply the PELT algorithm. Run this algorithm using a recommended penalty, as you likely do not know the exact number of change points in the random component. If the algorithm detects change points, it indicates that the noise level in the observations changes over time. If no change points are reported, then the noise is considered homogeneous..
+Category: GROUPING
+Observation: Grouping: Based on the correlation plot, the following components can be grouped together: (0,1,2).
+Category: EXPLAINED-VARIANCE
+Observation: Explained Variance: The smoothed signal explains 98.45% of the variance.
+Category: ESTIMATED-NOISE
+Observation: Estimated Noise: The unexplained variance (noise) is estimated to be 1.55%.
+Category: SPECIFIC-COMMENTS
+Observation: Specific Comments: The noise appears to be uncorrelated. With this dataset, it is reasonable to use the first 3 components to approximate the signal and the remainder to be noise. Since the Durbin-Watson statistic is in the 1.5 to 2.5 range (1.7), we can treat the noise as independent Further, PELT reported no change points in the noise, so we can treat the noise as Independent Identically Distributed If your downstream task, needs to approximate the data as the sum of a smooth signal with IID noise, with this data, it is a reasonable choice.

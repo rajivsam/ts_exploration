@@ -16,3 +16,4 @@ kmds
 skrub
 KDEPy
 ruptures
+jinja2
