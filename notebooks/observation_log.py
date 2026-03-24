@@ -2,6 +2,11 @@ from enum import Enum
 from collections import namedtuple
 
 class ObsCat(Enum):
+    SOURCE_DATA = "SOURCE-DATA"
+    PREPROCESSING = "PREPROCESSING"
+    TASKS = "TASKS"
+    UPDATE = "UPDATE"
+
     DESCRIPTIVE_STATISTICS = "DESCRIPTIVE-STATISTICS"
     OUTLIERS = "OUTLIERS"
     RAW_PLOTS = "RAW-PLOTS"
@@ -14,6 +19,10 @@ class ObsCat(Enum):
     SPECIFIC_COMMENTS = "SPECIFIC-COMMENTS"
 
 class ObservationTemplates:
+    SOURCE_DATA = "{{source_details}}"
+    PREPROCESSING = "{{preprocessing_details}}"
+    TASKS = "{{task_details}}"
+    UPDATE = "{{update_details}}"
     DESCRIPTIVE_STATISTICS = """Descriptive Statistics: There were {{num_samples}} samples, taken at a frequency of {{sampling_rate}}. The mean was {{ "%0.2f" | format(mean)}} and the standard deviation was {{ "%0.2f" | format(std)}}. Evaluation of the histogram and kernel density plots reveals a {{modality}} distribution."""
     OUTLIERS = """Outliers: Using the interquartile range (IQR) metric, the proportion of outliers was found to be {{ "%0.2f" | format(outlier_proportion)}}."""
     RAW_PLOTS = "Raw Plots: {{remarks}}"

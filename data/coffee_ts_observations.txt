@@ -1,3 +1,11 @@
+Category: SOURCE-DATA
+Observation: Data was from St.Louis FRED.
+Category: PREPROCESSING
+Observation: SSA does standardization as part of preprocessing, no missing values
+Category: TASKS
+Observation: This is analysis, not modeling. This dataset may be a candidate for pattern mining, forecasting, among others.
+Category: UPDATE
+Observation: This is analysis, not modeling. This dataset may be a candidate for pattern mining, forecasting, among others.
 Category: DESCRIPTIVE-STATISTICS
 Observation: Descriptive Statistics: There were 426 samples, taken at a frequency of monthly (first day of month). The mean was 144.91 and the standard deviation was 65.39. Evaluation of the histogram and kernel density plots reveals a multimodal distribution.
 Category: OUTLIERS

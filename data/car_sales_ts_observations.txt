@@ -1,3 +1,11 @@
+Category: SOURCE-DATA
+Observation: Data was from kaggle, however, it looks like it can be traced to https://www.york.ac.uk/depts/maths/data/ts/. However, it appears in the time series data library as well. Looks like a publicly available dataset.
+Category: PREPROCESSING
+Observation: SSA does standardization as part of preprocessing, no missing values
+Category: TASKS
+Observation: This is analysis, not modeling. This dataset may be a candidate for pattern mining, forecasting, among others.
+Category: UPDATE
+Observation: This is analysis, not modeling. This dataset may be a candidate for pattern mining, forecasting, among others.
 Category: DESCRIPTIVE-STATISTICS
 Observation: Descriptive Statistics: There were 108 samples, taken at a frequency of monthly (first day of month). The mean was 14595.11 and the standard deviation was 4504.22. Evaluation of the histogram and kernel density plots reveals a multimodal distribution.
 Category: RAW-PLOTS

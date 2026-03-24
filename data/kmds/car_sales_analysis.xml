@@ -268,13 +268,17 @@
 
 <owl:NamedIndividual rdf:about="#coffee_prices_35_year_analysis">
   <rdf:type rdf:resource="#KnowledgeExtractionExperimentationWorkflow"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation11"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation4"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation5"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation9"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation7"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation8"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation2"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation6"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation4"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation12"/>
   <has_exploratory_observations rdf:resource="#exploratoryobservation3"/>
-  <has_exploratory_observations rdf:resource="#exploratoryobservation5"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation10"/>
+  <has_exploratory_observations rdf:resource="#exploratoryobservation2"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation1">
@@ -283,7 +287,7 @@
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation2">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Descriptive Statistics: There were 108 samples, taken at a frequency of monthly (first day of month). The mean was 14595.11 and the standard deviation was 4504.22. Evaluation of the histogram and kernel density plots reveals a multimodal distribution.</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data was from kaggle, however, it looks like it can be traced to https://www.york.ac.uk/depts/maths/data/ts/. However, it appears in the time series data library as well. Looks like a publicly available dataset.</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
   <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
@@ -291,7 +295,7 @@
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation3">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Raw Plots: No outliers, two distinct seasonalities, gradual monotonic trend.</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SSA does standardization as part of preprocessing, no missing values</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
   <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
@@ -299,7 +303,7 @@
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation4">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Smoothed Plots: Visually, the Singular Spectrum Analysis (SSA) appears to achieve a very good reconstruction. A gradual trend and two seasoalities, one occuring earlier in the year, the other occuring later. The first seasonality appears to account for more variation. Trend accounts for about 25 percent and seasonality accounts for about 66 percent of the variation</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is analysis, not modeling. This dataset may be a candidate for pattern mining, forecasting, among others.</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
   <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
@@ -307,10 +311,7 @@
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation5">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Change Points: The chosen approach for capturing change points involves working with the smoothed version of the signal rather than the noisy, raw signal. While the drawback of this method is that it may require additional steps to detect change points within the noise component, smoothing allows us to use elementary calculus to identify shifts in the signal's derivative.
-Peak-finding algorithms of varying sophistication can be applied for this purpose. Here, SciPy's find_peaks function is used to locate local maxima and minima in the smoothed signal. The code below demarcates these points, representing segments that may hold specific significance within the application's domain—a factor best interpreted by a domain expert.
-Recall that the smoothed signal accounts for most of the variation in the observed signal. But what about the residuals? Since they often account for only a small portion of the variation, you might not be concerned with them. However, if you are interested in the nature of the residuals—for instance, if you plan to use the signal in a predictive model and need to confirm that the residuals are independent random variables—you can use the Durbin-Watson test. A test statistic in the range of 1.5 to 2.5 suggests the residuals are likely white noise.
-If you need to verify if the noise is homogeneous (a crucial step if downstream predictive modeling is your goal), you can apply the PELT algorithm. Run this algorithm using a recommended penalty, as you likely do not know the exact number of change points in the random component. If the algorithm detects change points, it indicates that the noise level in the observations changes over time. If no change points are reported, then the noise is considered homogeneous..</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is analysis, not modeling. This dataset may be a candidate for pattern mining, forecasting, among others.</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
   <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
@@ -318,7 +319,7 @@ If you need to verify if the noise is homogeneous (a crucial step if downstream 
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation6">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estimated Noise: The unexplained variance (noise) is estimated to be 5.77%.</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Descriptive Statistics: There were 108 samples, taken at a frequency of monthly (first day of month). The mean was 14595.11 and the standard deviation was 4504.22. Evaluation of the histogram and kernel density plots reveals a multimodal distribution.</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
   <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
@@ -326,7 +327,7 @@ If you need to verify if the noise is homogeneous (a crucial step if downstream 
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation7">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Explained Variance: The smoothed signal explains 94.23% of the variance.</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Raw Plots: No outliers, two distinct seasonalities, gradual monotonic trend.</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
   <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
@@ -334,8 +335,43 @@ If you need to verify if the noise is homogeneous (a crucial step if downstream 
 
 <owl:NamedIndividual rdf:about="#exploratoryobservation8">
   <rdf:type rdf:resource="#ExploratoryObservation"/>
-  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific Comments: The noise appears to be uncorrelated. This dataset has trend and seasonal component The first component is the trend and explains about 25 percent of the variance, seasonality explains 66 percent of the variance Seasonality accounts for most of the variation as opposed to the other two datasets which are no seasonality, all trend or trend-cycles. Since the Durbin-Watson statistic is in the 1.5 to 2.5 range (2.23), we can treat the noise as independent Further, PELT reported no change points in the noise, so we can treat the noise as Independent Identically Distributed If your downstream task, needs to approximate the data as the sum of a smooth signal with IID noise, with this data, it is a reasonable choice. For this dataset, Monte-Carlo simulation may be a reasonable assumption. We can think of other realizations of this dataset to be. similar to this dataset, for the entire period. The signal components lie within the confidence intervals obtained from the simulation.</finding>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Smoothed Plots: Visually, the Singular Spectrum Analysis (SSA) appears to achieve a very good reconstruction. A gradual trend and two seasoalities, one occuring earlier in the year, the other occuring later. The first seasonality appears to account for more variation. Trend accounts for about 25 percent and seasonality accounts for about 66 percent of the variation</finding>
   <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
+  <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation9">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Change Points: The chosen approach for capturing change points involves working with the smoothed version of the signal rather than the noisy, raw signal. While the drawback of this method is that it may require additional steps to detect change points within the noise component, smoothing allows us to use elementary calculus to identify shifts in the signal's derivative.
+Peak-finding algorithms of varying sophistication can be applied for this purpose. Here, SciPy's find_peaks function is used to locate local maxima and minima in the smoothed signal. The code below demarcates these points, representing segments that may hold specific significance within the application's domain—a factor best interpreted by a domain expert.
+Recall that the smoothed signal accounts for most of the variation in the observed signal. But what about the residuals? Since they often account for only a small portion of the variation, you might not be concerned with them. However, if you are interested in the nature of the residuals—for instance, if you plan to use the signal in a predictive model and need to confirm that the residuals are independent random variables—you can use the Durbin-Watson test. A test statistic in the range of 1.5 to 2.5 suggests the residuals are likely white noise.
+If you need to verify if the noise is homogeneous (a crucial step if downstream predictive modeling is your goal), you can apply the PELT algorithm. Run this algorithm using a recommended penalty, as you likely do not know the exact number of change points in the random component. If the algorithm detects change points, it indicates that the noise level in the observations changes over time. If no change points are reported, then the noise is considered homogeneous..</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
+  <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation10">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estimated Noise: The unexplained variance (noise) is estimated to be 5.77%.</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
+  <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation11">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Explained Variance: The smoothed signal explains 94.23% of the variance.</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</finding_sequence>
+  <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
+  <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exploratoryobservation12">
+  <rdf:type rdf:resource="#ExploratoryObservation"/>
+  <finding rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specific Comments: The noise appears to be uncorrelated. This dataset has trend and seasonal component The first component is the trend and explains about 25 percent of the variance, seasonality explains 66 percent of the variance Seasonality accounts for most of the variation as opposed to the other two datasets which are no seasonality, all trend or trend-cycles. Since the Durbin-Watson statistic is in the 1.5 to 2.5 range (2.23), we can treat the noise as independent Further, PELT reported no change points in the noise, so we can treat the noise as Independent Identically Distributed If your downstream task, needs to approximate the data as the sum of a smooth signal with IID noise, with this data, it is a reasonable choice. For this dataset, Monte-Carlo simulation may be a reasonable assumption. We can think of other realizations of this dataset to be. similar to this dataset, for the entire period. The signal components lie within the confidence intervals obtained from the simulation.</finding>
+  <finding_sequence rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</finding_sequence>
   <exploratory_observation_type rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data Quality Observation</exploratory_observation_type>
   <intent rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DATA_UNDERSTANDING</intent>
 </owl:NamedIndividual>

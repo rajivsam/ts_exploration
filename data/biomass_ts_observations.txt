@@ -1,3 +1,11 @@
+Category: SOURCE-DATA
+Observation: Data was from kaggle, but it looks like it was sourced from a spannish energy network platform ENTSOE
+Category: PREPROCESSING
+Observation: SSA does standardization as part of preprocessing, there is one missing value.
+Category: TASKS
+Observation: This is analysis, not modeling. This dataset may be a candidate for pattern mining, forecasting, among others.
+Category: UPDATE
+Observation: This is analysis, not modeling. This dataset may be a candidate for pattern mining, forecasting, among others.
 Category: DESCRIPTIVE-STATISTICS
 Observation: Descriptive Statistics: There were 2160 samples, taken at a frequency of hourly. The mean was 324.67 and the standard deviation was 49.14. Evaluation of the histogram and kernel density plots reveals a multimodal distribution.
 Category: OUTLIERS
